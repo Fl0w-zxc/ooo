@@ -1,17 +1,20 @@
 from datetime import datetime
 from src.masks import hide_account_number, hide_card_number
 
+
 def hide_number(data: str) -> str:
     """
     Принимает строку с типом карты/счета и номером, возвращает строку с замаскированным номером.
     """
     parts = data.split()
     if parts[0] in ["Visa", "MasterCard", "Maestro"]:
-        digits = "".join([x for x in parts if x.isdigit()])
-        masked = hide_card_number(digits)
+        digits = "".join([x for x in parts if x.isdigit()])  # Извлекаем цифры номера карты
+        masked = hide_card_number(digits)  # Передаём только цифры номера карты
         return " ".join([x for x in parts if x.isalpha()]) + " " + masked
     elif parts[0] == "Счет":
-        return "Счет " + hide_account_number(parts[1])
+        account_number = parts[1]  # Извлекаем номер счёта
+        masked = hide_account_number(account_number)  # Передаём только номер счёта
+        return "Счет " + masked
     else:
         return data
 

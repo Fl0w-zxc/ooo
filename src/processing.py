@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import List
 
+
 def sort_dates(data: List[dict], order: str = 'descending') -> List[dict]:
     """
     Сортирует список словарей по дате.
