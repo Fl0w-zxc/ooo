@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import List
 
 
-def sort_dates(data: List[dict], order: str = 'descending') -> List[dict]:
+def sort_by_date(data: List[dict], order: str = 'descending') -> List[dict]:
     """
     Сортирует список словарей по дате.
 
@@ -27,11 +27,11 @@ data = [
     {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}
 ]
 
-sorted_data = sort_dates(data, 'descending')
+sorted_data = sort_by_date(data, 'descending')
 print(sorted_data)
 
 
-def filter_state(data: List[dict], state: str = 'EXECUTED') -> List[dict]:
+def filter_by_state(data: List[dict], state: str = 'EXECUTED') -> List[dict]:
     """
     Фильтрует список словарей по состоянию.
 
@@ -57,5 +57,5 @@ data = [
     {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}
 ]
 
-filtered_data = filter_state(data, 'EXECUTED')
+filtered_data = filter_by_state(data, 'EXECUTED')
 print(filtered_data)
