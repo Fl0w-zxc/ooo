@@ -1,4 +1,4 @@
-def hide_card_number() -> str:
+def mask_card() -> str:
     """Функция запрашивает номер карты и возвращает его в замаскированном формате."""
     card_num = input("Введите номер карты: ")
     # Убираем пробелы и проверяем, что введены только цифры
@@ -10,7 +10,7 @@ def hide_card_number() -> str:
     return masked_num
 
 
-def hide_account_number() -> str:
+def mask_account() -> str:
     """Функция запрашивает номер счета и возвращает его в замаскированном формате."""
     account_num = input("Введите номер счета: ")
     # Убираем пробелы и проверяем, что введены только цифры
@@ -24,5 +24,5 @@ def hide_account_number() -> str:
 
 # Пример использования
 if __name__ == "__main__":
-    print(hide_card_number())
-    print(hide_account_number())
+    print(mask_card())
+    print(mask_account())
