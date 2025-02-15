@@ -1,4 +1,4 @@
-from src.masks import hide_account_number, hide_card_number
+from src.masks import mask_account, mask_card
 
 """
 # Проверка функции mask_card() с аннотациями типов
@@ -6,8 +6,8 @@ from src.masks import hide_account_number, hide_card_number
 
 
 def test_mask_card() -> None:
-    assert hide_card_number("1488148814881488") == "1488 14** **** 1488"
-    assert hide_card_number("464646464646") == "Некорректный номер карты"
+    assert mask_card("1488148814881488") == "1488 14** **** 1488"
+    assert mask_card("4646464") == "Некорректный номер карты"
 
 
 """
@@ -16,5 +16,5 @@ def test_mask_card() -> None:
 
 
 def test_mask_account() -> None:
-    assert hide_account_number("73654108430135871488") == "**1488"
-    assert hide_account_number("1488") == "Некорректный номер счета"
+    assert mask_account("73654108430135871488") == "**1488"
+    assert mask_account("1488") == "Некорректный номер счета"
